@@ -1,1 +1,0 @@
-import{hb as o,ib as a,qa as n,tb as p,xb as s}from"./chunk-CWLYJARK.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-page-not-found"]],standalone:!0,features:[s],decls:2,vars:0,template:function(e,r){e&1&&(o(0,"p"),p(1,"page-not-found works!"),a())}})};export{i as PageNotFoundComponent};
