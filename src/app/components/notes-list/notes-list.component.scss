@@ -1,0 +1,35 @@
+@use "../../../assets/styles/variables.scss" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.note-list {
+    // .note-list__action
+
+    &__action {
+        &:not(:last-child) {
+            margin-bottom: toRem(30);
+        }
+        button {
+            transition: 0.3s;
+            fill: $praimery;
+            @media (any-hover: hover) {
+                &:hover {
+                    fill: $primeryHover;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    // .note-list__grid
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+        gap: toRem(30);
+    }
+}
+
+.icon {
+    width: toRem(30);
+    height: toRem(30);
+}

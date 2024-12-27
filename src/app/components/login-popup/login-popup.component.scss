@@ -1,0 +1,75 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $opacityBgc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    
+    &.open {
+        transition: opacity 0.2s ease-in;
+        visibility: visible;
+        opacity: 1;
+    }
+    // .popup__block
+
+    &__block {
+        position: relative;
+        background-color: $backGround;
+        padding: toRem(30) toRem(50);
+    }
+
+    // .popup__header
+
+    &__header {
+        font-weight: 600;
+        font-size: toRem(20);
+        letter-spacing: toRem(0.35);
+        margin-bottom: toRem(20);
+    }
+
+    // .popup__action
+
+    &__action {
+        button {
+            width: 100%;
+            background-color: $praimery;
+            color: $backGround;
+            font-weight: 500;
+            padding: toRem(15);
+            transition: 0.3s ease;
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $primeryHover;
+                }
+            }
+        }
+    }
+
+    // .popup__close
+
+    &__close {
+        position: absolute;
+        top: toRem(10);
+        right: toRem(10);
+    }
+}
+.icon {
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    fill: $praimery;
+    @media (any-hover: hover) {
+        &:hover {
+            fill: $primeryHover;
+        }
+    }
+}

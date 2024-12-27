@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@use "assets/styles/reset";
+@use "assets/styles/mixin"as*;
+@use "assets/styles/variables" as *;
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap");
+
+body{
+    font-family: "Montserrat";
+    color: $praimery;
+    background-color: $backGround;
+}
+
+[class*="__container"] {
+    max-width: #{$containerWidth}px;
+    margin: 0 auto;
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+}

@@ -1,0 +1,17 @@
+<div class="popup" [ngClass]="{'open' : loginService.isOpen()}" (click)="close()">
+    <div class="popup__block">
+        <div class="popup__header">
+            <h2>Signin on your account with google</h2>
+        </div>
+        <div class="popup__action">
+            <button (click)="signIn()">Signin</button>
+        </div>
+        <div class="popup__close">
+            <button (click)="close()">
+                <svg class="icon">
+                    <use xlink:href="icons/sprite.svg#cross"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

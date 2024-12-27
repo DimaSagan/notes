@@ -1,0 +1,24 @@
+<div class="card" >
+    <div class="card__action action">
+        <button (click)="del(task.id)"> 
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#cross"></use>
+            </svg>
+        </button>
+    </div>
+   <div (click)="getQurentTask()">
+        <div class="card__header header">
+            <h2 class="header__title">{{task.title}}</h2>
+        </div>
+        <div class="card__body body">
+            <div class="body__content content">
+                <!-- <div class="content__type">Type: note</div> -->
+                <div class="content__date">Date: {{task.date|date:'EEE MMM dd yyyy'}}</div>
+                <div class="content__date">Time: {{task.date|date:'HH:mm'}}</div>
+    
+            </div>
+        </div>
+    </div>
+        
+   
+</div>

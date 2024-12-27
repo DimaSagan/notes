@@ -1,0 +1,35 @@
+// sizes
+// Min page width
+$minWidth: 320;
+// Screen width
+$maxWidth: 1920;
+// Container width
+$maxWidthContainer: 1890;
+// Container safe border
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// break points
+$bigScreen: 1920.98;
+$pc: 1023.98;
+$tablet: 990.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;
+
+// colors 
+
+$backGround: #ECEFF4;
+$praimery: #2E3440;
+$primeryHover: #3e4758;
+$opacityBgc: #ffffff87;
+
+$yellow: #EBCB8B;
+$red: #BF616A;
+$blue: #5E81AC;
+
+$green: #A3BE8C;
+$hoverGreen: #93ad7d;
+
+$nord4: #D8DEE9;
+$nord5: #E5E9F0;

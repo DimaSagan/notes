@@ -1,0 +1,57 @@
+
+    <div class="redactor" [ngClass]="{'open': stateService.isOpen()}" appRedaktorKeys (newTask)="addTask()" (chekBox)="taskToggle()">
+
+    <div class="redactor__wrapper">
+
+        <div class="redactor__content">
+
+            <form class="form" [formGroup]="checkListBlocks" #form="ngForm" appRedaktorKeys [form]="form" (ngSubmit)="onSubmit()">
+                <input type="text" placeholder="Title..." formControlName="title" class="form__title" value>
+
+                <div class="form__controls">                   
+                    <button type="button" (click)="taskToggle()" [ngClass]="{'active': active}">
+                        <svg class="icon">
+                            <use xlink:href="icons/sprite.svg#taskChek"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div formArrayName="tasks" class="form__wrapper">
+                    @for (task of tasks.controls; track $index) {
+                    <div class="form__block block" [formGroupName]="$index">
+                        @if(task.value.checkBox !==null){
+                        <input type="checkbox" formControlName="checkBox" id="check{{$index}}">
+                        <label for="check{{$index}}"></label>
+                        }
+                        <textarea name="message" formControlName="message" id="message{{$index}}" placeholder="Your task" class="form__task"
+                            rows="1" (keydown.shift.backspace)="deleteTask($index)" appHeightResize></textarea>
+                    </div>
+                    }
+                </div>
+                <div class="form__add-block">
+                    <app-add-button (click)="addTask()"></app-add-button>
+                </div>
+                <div class="form__action">
+                    <app-sub-button type="submit">save</app-sub-button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="redactor__close">
+            <button type="button" (click)="close()">
+                <svg>
+                    <use xlink:href="icons/sprite.svg#cross"></use>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- <div contenteditable="true" formControlName="message" appContentEditable class="form__task"></div> -->

@@ -1,0 +1,16 @@
+@use "../assets/styles/mixin"as*;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    // .wrapper__page
+
+    &__page {
+        flex-grow: 1;
+        height: 100%;
+        // padding-top: 50px;
+    }
+}
+
+
+

@@ -1,0 +1,25 @@
+@if(load()){
+    <header class="header" [ngClass]="{'load': opacity()}">
+    <div class="header__container">
+        <div class="header__logo">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#note"></use>
+            </svg>
+            <div class="header__logo-text" appAnimationText [text]="'Notes'" [startDelay]="1500"></div>
+        </div>
+        @if(login()){
+        <a class="header__login" (click)="logOut()">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#exit"></use>
+            </svg>
+        </a>
+        }@else {
+        <a class="header__login" (click)="openLogin()">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#login"></use>
+            </svg>
+        </a>
+        }
+    </div>
+</header>
+}

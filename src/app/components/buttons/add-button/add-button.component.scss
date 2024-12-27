@@ -1,0 +1,24 @@
+@use "../../../../assets/styles/variables" as *;
+@use "../../../../assets/styles/mixin" as *;
+button{
+    color: $red;
+    font-weight: 500;
+    font-size: toRem(20);
+    display: flex;
+    align-items: center;
+    gap: toRem(5);
+    cursor: pointer;
+    transition: 0.3s;
+    svg{
+        width: toRem(20);
+        height: toRem(20);
+        fill: $praimery;
+    }
+    @media(any-hover: hover){
+            &:hover{
+            transform: scale(1.09);
+            svg{
+            fill: $primeryHover;}
+           }
+           }
+}

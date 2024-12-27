@@ -1,0 +1,77 @@
+@use "../../../assets/styles/variables.scss" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.card {
+    background-color: $praimery;
+    color: $backGround;
+    padding-top: toRem(40);
+    padding-bottom: toRem(30);
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    position: relative;
+    transition: 0.3s ease;
+    box-shadow: toRem(5) toRem(5) toRem(12) rgba(8, 8, 49, 0.097);
+    height: 100%;
+    cursor: pointer;
+    @media(any-hover: hover){
+            &:hover{
+            transform: scale(1.05);
+            background-color: $primeryHover;
+           }
+           }
+}
+.header {
+    font-size: toRem(20);
+    font-weight: 500;
+    line-height: 1.27;
+    letter-spacing: toRem(0.34);
+    &:not(:last-child) {
+        margin-bottom: toEm(15, 20);
+    }
+}
+.body {
+    // .body__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(8);
+    }
+}
+.content {
+    // .content__type
+
+    &__type {
+    }
+
+    // .content__date
+
+    &__date {
+    }
+}
+.action {
+    button {
+        fill: $backGround;
+        padding: toRem(5);
+        display: flex;
+        position: absolute;
+        top: toRem(5);
+        right: toRem(5);
+        transition: 0.3s ease;
+        z-index: 20;
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.15);
+            }
+            &:active{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+.icon {
+    width: toRem(20);
+    height: toRem(20);
+    display: inline-block;
+    transform: rotate(45deg);
+}

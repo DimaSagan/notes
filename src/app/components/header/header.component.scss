@@ -1,0 +1,44 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.header {
+    padding-top: toRem(20);
+    padding-bottom: toRem(20);
+    opacity: 0;
+    transition: opacity  0.5s;
+    &.load {
+        opacity: 1;
+    }
+    // .header__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .header__logo
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: toRem(10);
+    }
+
+    &__logo-text {
+        color: $praimery;
+        font-size: toRem(25);
+        font-weight: 600;
+        letter-spacing: toRem(0.5);
+        overflow: hidden;
+    }
+    &__logo,
+    &__login {
+        cursor: pointer;
+    }
+}
+.icon {
+    width: toRem(40);
+    height: toRem(40);
+    fill: $praimery;
+}

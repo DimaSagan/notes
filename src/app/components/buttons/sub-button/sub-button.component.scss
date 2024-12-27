@@ -1,0 +1,18 @@
+@use "../../../../assets/styles/variables" as *;
+@use "../../../../assets/styles/mixin" as *;
+
+button{
+    font-size: toRem(18);
+    color: $nord5;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: toRem(10) toRem(30);
+    background-color: $praimery;
+    transition: .3s ease;
+    
+    @media(any-hover: hover){
+            &:hover{
+            background-color: $primeryHover;
+           }
+           }
+}
