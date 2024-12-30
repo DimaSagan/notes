@@ -1,0 +1,90 @@
+@use "../../../assets/styles/mixin" as *;
+@use "../../../assets/styles/variables.scss" as *;
+@use "sass:math";
+.bgc {
+    background: rgb(235, 203, 139);
+    background: radial-gradient(circle, rgba(235, 203, 139, 1) 12%, rgba(216, 222, 233, 1) 91%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: -1;
+}
+.home {
+    display: flex;
+    height: calc(100dvh - 83px);
+    &__text-block,
+    &__image {
+        width: 100%;
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
+    &:not(:last-child){
+    padding-bottom: toRem(100);
+    }
+    @media (max-width: toEm($mobile)) {
+        height: auto;
+        &:not(:last-child){
+        margin-bottom: toRem(30);
+        }
+    }
+
+    &__image {
+        font-size: toRem(0);
+        img {
+            width: 100%;
+            height: 100%;
+            scale: 426 / 880;
+            object-fit: contain;
+        }
+    }
+}
+.text-block {
+    align-self: center;
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: toEm(20, 50);
+        }
+    }
+
+    // .text-block__description
+
+    &__description {
+        line-height: 1.2;
+        &:not(:last-child) {
+            margin-bottom: toEm(20, 16);
+        }
+        @media (max-width: toEm($mobile)) {
+            font-size: toRem(18);
+        }
+    }
+}
+
+.login {
+    padding: toRem(17) toRem(40);
+    color: $backGround;
+    background-color: $praimery;
+    transition: 0.3s;
+    text-transform: capitalize;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $primeryHover;
+        }
+    }
+}
+.title-mobile {
+    padding-top: toRem(50);
+    &:not(:last-child) {
+        margin-bottom: toRem(30);
+    }
+}
+.title {
+    font-size: toRem(50);
+    line-height: 1.14;
+}
+.action{
+    button{
+        width: 100%;
+    }
+}

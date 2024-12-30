@@ -7,6 +7,9 @@
             </svg>
             <div class="header__logo-text" appAnimationText [text]="'Notes'" [startDelay]="1500"></div>
         </div>
+        <!-- <nav class="header__navigation">
+            <a href="">notes</a>
+        </nav> -->
         @if(login()){
         <a class="header__login" (click)="logOut()">
             <svg class="icon">

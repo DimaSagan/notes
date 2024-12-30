@@ -1,0 +1,21 @@
+@if(mobile){<article class="title-mobile">
+    <h1 class="title">Manage your task easy</h1>
+</article>}
+<article class="home">
+    <section class="home__text-block text-block">
+        @if(!mobile){<h1 class="text-block__title title">Manage your task easy</h1>}
+        <p class="text-block__description">
+            Create and edit your notes. Use the functions to create a text note or a list with checkboxes. Make changes to existing notes at any time.
+        </p>
+        @if(!mobile){<button class="home__login login" (click)="login()">login now</button>}
+    </section>
+    <section class="home__image">
+        <img src="model.png" alt="">
+    </section>
+</article>
+@if(mobile){
+    <div class="action">
+        <button class="login" (click)="login()">login now</button>
+    </div>
+}
+<div class="bgc"></div>

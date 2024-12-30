@@ -1,0 +1,36 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixin" as *;
+
+.footer {
+    padding-top: toRem(50);
+    padding-bottom: toRem(10);
+    background-color: $praimery;
+    color: $backGround;
+    // .footer__container
+
+    &__container {
+    }
+
+    // .footer__socails
+
+    &__socails {
+        &:not(:last-child){
+            margin-bottom: toRem(30);
+            }
+        ul{
+            li{
+                &:not(:last-child){
+                margin-bottom: toRem(10);
+                }
+            }
+        }
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        text-align: center;
+        font-size: toRem(14);
+        
+    }
+}

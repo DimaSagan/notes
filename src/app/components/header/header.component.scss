@@ -6,6 +6,7 @@
     padding-bottom: toRem(20);
     opacity: 0;
     transition: opacity  0.5s;
+    backdrop-filter: blur(500px);
     &.load {
         opacity: 1;
     }
@@ -15,6 +16,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: toRem(10);
     }
 
     // .header__logo
@@ -31,10 +33,15 @@
         font-weight: 600;
         letter-spacing: toRem(0.5);
         overflow: hidden;
+        min-width: toRem(78);
     }
     &__logo,
     &__login {
         cursor: pointer;
+    }
+    &__navigation{
+        flex-grow: 1;
+
     }
 }
 .icon {

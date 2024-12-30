@@ -38,12 +38,12 @@ export class HeaderComponent extends ClearObservableDirective  implements OnInit
         this.load.set(true)
         setTimeout(() => {
           this.opacity.set(true)
-        },100)
+        },500)
       } else {
         this.load.set(true)
         setTimeout(() => {
           this.opacity.set(true)
-        },100)
+        },500)
       }
      })
      

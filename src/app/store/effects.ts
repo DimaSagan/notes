@@ -1,11 +1,12 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { from, of } from 'rxjs';
-import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
+import { map, mergeMap} from 'rxjs/operators';
 import { addTask, addTaskSuccess, checkLogin, checkLoginSuccess, clearCurentTask, clearCurentTaskSuccess, deleteTask, deleteTaskSuccess, getCurentTask, getCurentTaskSuccess, getTasks, getTasksSuccess, login, loginSuccess, logOut, logOutSuccess, updateTask, updateTaskSuccess } from './actions';
 import { FirebaseService } from '../services/firebase.service';
 import { FirestoreService } from '../services/firestore.service';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class NotesEffects {
@@ -14,7 +15,8 @@ export class NotesEffects {
     constructor(
         private firebase: FirebaseService,
         private firestore: FirestoreService,
-        private store: Store
+        private store: Store,
+        private router: Router
     ) { }
 
     userLogin$ = createEffect(() =>
@@ -23,6 +25,9 @@ export class NotesEffects {
             mergeMap(() => {
                 return from(this.firebase.signIn()).pipe(
                     map((name) => {
+                        if (name !== null) {
+                            this.router.navigate(['notes-list'])
+                        }
                         this.store.dispatch(getTasks())
                         return loginSuccess({
                             userName: name
@@ -39,6 +44,7 @@ export class NotesEffects {
             mergeMap(() => {
                 return this.firebase.signOut().pipe(
                     map((userName) => {
+                        this.router.navigate(['home'])
                         return logOutSuccess({
                             userName: userName
                         })

@@ -3,6 +3,9 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+    // position: relative;
+    // overflow: clip;
+    
     // .wrapper__page
 
     &__page {
@@ -10,6 +13,12 @@
         height: 100%;
         // padding-top: 50px;
     }
+}
+
+.sticky{
+position: sticky;
+top: 0;
+left: 0;
 }
 
 
